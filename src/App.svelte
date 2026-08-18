@@ -16,10 +16,3 @@
     <Svg />
   </div>
 </div>
-
-<style global>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700;900&display=swap');
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-</style>

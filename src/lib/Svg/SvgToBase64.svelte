@@ -52,7 +52,3 @@
   <span class="text-xs">Raw Base64</span>
   <input type="button" class="bg-readonly text-white text-left cursor-clipboard py-1 px-2 rounded overflow-hidden text-ellipsis w-full" value="{base64Svg['raw']}" on:click={(e) => copyToClipboard(e.target.value)}>
 </label>
-
-<style>
-  @import 'overlayscrollbars/overlayscrollbars.css';
-</style>

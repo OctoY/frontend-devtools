@@ -35,7 +35,7 @@
     bind:value={svg}
     on:input={() => updateAll()}
 />-->
-<textarea class="bg-white text-black py-1 px-2 rounded focus:outline-rebeccapurple focus:outline focus:outline-2 focus:bg-coffee focus:text-rebeccapurple max-w-full" rows="8" bind:value={svg} on:input={() => updateAll()} />
+<textarea class="bg-white text-black py-1 px-2 rounded focus:outline-rebeccapurple focus:outline focus:outline-2 focus:bg-coffee focus:text-rebeccapurple max-w-full" rows="8" bind:value={svg} on:input={() => updateAll()}></textarea>
 </label>
 <div class="bg-readonly aspect-square flex rounded [&_svg]:w-full [&_svg]:h-full p-4">
   {@html svg}

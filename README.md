@@ -9,40 +9,33 @@ Currently available tools:
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) 20+
-- npm 10+
+- [Docker](https://docs.docker.com/get-docker/)
+
+All Node/npm commands run inside Docker so dependency and tooling versions stay locked to what's defined in the `Dockerfile` — you don't need Node or npm installed locally.
 
 ## Getting started
 
-Install dependencies:
+The `Dockerfile` has three targets: `dev`, `build` and `runtime` (the default).
+
+### Development server (with hot module reloading)
+
+Build the `dev` image:
 
 ```sh
-npm install
+docker build --target dev -t frontend-devtools:dev .
 ```
 
-Run the app in development mode with hot module reloading:
+Run it, mounting the source so edits on the host are picked up, while keeping the container's own `node_modules` (with the locked dependency versions):
 
 ```sh
-npm run dev
+docker run --rm -p 5173:5173 -v "$PWD":/app -v /app/node_modules frontend-devtools:dev
 ```
 
-Build the production bundle (output goes to `dist/`):
+The app will be available at http://localhost:5173.
 
-```sh
-npm run build
-```
+### Production build & preview
 
-Preview the production build locally:
-
-```sh
-npm run preview
-```
-
-## Running with Docker
-
-A minimal multi-stage `Dockerfile` is included: it builds the app with Node and serves the static output with nginx.
-
-Build the image:
+Build the production image (builds the static bundle and serves it with nginx):
 
 ```sh
 docker build -t frontend-devtools .

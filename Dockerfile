@@ -1,5 +1,6 @@
 # --- Base: install locked dependencies ---
-FROM node:20-alpine AS base
+# Pinned to satisfy Vite's minimum required Node version (^20.19.0 || >=22.12.0).
+FROM node:20.19-alpine AS base
 WORKDIR /app
 
 COPY package.json package-lock.json ./

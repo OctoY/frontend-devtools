@@ -66,6 +66,6 @@ src/
 
 ## Tech stack
 
-- [Svelte](https://svelte.dev/) 4
-- [Vite](https://vitejs.dev/) 4
+- [Svelte](https://svelte.dev/) 5
+- [Vite](https://vitejs.dev/) 7
 - [Tailwind CSS](https://tailwindcss.com/) 3
